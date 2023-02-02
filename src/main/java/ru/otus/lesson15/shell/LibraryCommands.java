@@ -14,8 +14,8 @@ import ru.otus.lesson15.service.LibraryService;
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
 @ShellComponent
+@RequiredArgsConstructor
 public class LibraryCommands {
     private final LibraryService libraryService;
 

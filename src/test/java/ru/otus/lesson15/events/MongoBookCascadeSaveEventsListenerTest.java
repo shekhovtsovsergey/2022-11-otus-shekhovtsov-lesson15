@@ -17,9 +17,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
 
+@ComponentScan({"ru.otus.lesson15.repository", "ru.otus.lesson15.events"})
 @DisplayName("Сохранение нового автора и жанра вместе с книгой")
 @DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
-@ComponentScan({"ru.otus.lesson15.repository", "ru.otus.lesson15.events"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 class MongoBookCascadeSaveEventsListenerTest {
 

@@ -8,10 +8,10 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Document(collection = "books")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "comments")
 public class Comment {
     @Id
     private String id;

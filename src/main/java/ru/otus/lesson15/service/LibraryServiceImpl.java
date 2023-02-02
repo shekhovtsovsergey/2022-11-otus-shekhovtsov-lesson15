@@ -25,7 +25,6 @@ public class LibraryServiceImpl implements LibraryService {
     private final CommentRepository commentRepository;
 
     @Override
-    @Transactional(readOnly = true)
     public List<Author> getAllAuthors() {
         return authorRepository.findAll();
     }
@@ -37,31 +36,26 @@ public class LibraryServiceImpl implements LibraryService {
     }
 
     @Override
-    @Transactional
     public void deleteAuthorById(String id) {
         authorRepository.deleteById(id);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Genre> getAllGenres() {
         return genreRepository.findAll();
     }
 
     @Override
-    @Transactional
     public Genre saveGenre(Genre genre) {
         return genreRepository.save(genre);
     }
 
     @Override
-    @Transactional
     public void deleteGenreById(String id) {
         genreRepository.deleteById(id);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public long booksCount() {
         return bookRepository.count();
     }
@@ -73,31 +67,26 @@ public class LibraryServiceImpl implements LibraryService {
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Optional<Book> getBookById(String id) {
         return bookRepository.findById(id);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Book> getAllBooksByAuthor(Author author) {
         return bookRepository.findAllByAuthor_Id(author.getId());
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Book> getAllBooksByGenre(Genre genre) {
         return bookRepository.findAllByGenre_Id(genre.getId());
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Book> getAllBooksByAuthorAndGenre(Author author, Genre genre) {
         return bookRepository.findAllByAuthor_IdAndGenre_Id(author.getId(), genre.getId());
     }
@@ -109,19 +98,16 @@ public class LibraryServiceImpl implements LibraryService {
     }
 
     @Override
-    @Transactional
     public Comment saveComment(Comment comment) {
         return commentRepository.save(comment);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public Optional<Comment> getCommentById(String id) {
         return commentRepository.findById(id);
     }
 
     @Override
-    @Transactional(readOnly = true)
     public List<Comment> getAllCommentsByBook(Book book) {
         return commentRepository.findAllByBook_Id(book.getId());
     }
@@ -133,7 +119,6 @@ public class LibraryServiceImpl implements LibraryService {
     }
 
     @Override
-    @Transactional
     public void deleteCommentById(String id) {
         commentRepository.deleteById(id);
     }

@@ -17,9 +17,9 @@ import static org.springframework.data.mongodb.core.query.Criteria.where;
 import static org.springframework.data.mongodb.core.query.Query.query;
 
 
+@ComponentScan({"ru.otus.lesson15.repository", "ru.otus.lesson15.events"})
 @DisplayName("Удаление комментариев при наличии с ними удаляемой книги")
 @DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
-@ComponentScan({"ru.otus.lesson15.repository", "ru.otus.lesson15.events"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 class MongoBookCascadeDeleteEventsListenerTest {
 

@@ -17,10 +17,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.springframework.data.mongodb.core.query.Query.query;
 
 
-@DisplayName("Удаление автора при наличии/отсутствии с ним книг")
-@DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
 @ComponentScan({"ru.otus.lesson15.repository", "ru.otus.lesson15.events"})
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+@DisplayName("Удаление автора при наличии/отсутствии с ним книг")
+@DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
 class MongoAuthorDeleteEventsListenerTest {
 
     @Autowired
