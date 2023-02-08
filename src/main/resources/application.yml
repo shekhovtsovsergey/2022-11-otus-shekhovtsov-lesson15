@@ -1,0 +1,12 @@
+mongock:
+  #runner-type: "ApplicationRunner" # default
+  runner-type: "InitializingBean" # Если используется Shell, чтобы не было конфликтов
+  change-logs-scan-package: ru.otus.lesson15.mongock.changelog
+
+  spring:
+    data:
+      mongodb:
+        database: booksdb
+        port: 27017
+        embedded:
+          version: 4.0.2
